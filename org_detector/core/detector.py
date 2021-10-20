@@ -6,7 +6,6 @@ from utils.helper_functions import process_text
 from utils.base_interface import DetectorInterface
 from utils.config import MODEL_PATH, CLASS_PATH
 import jellyfish
-import itertools
 from utils.helper_functions import clean_text
 
 
