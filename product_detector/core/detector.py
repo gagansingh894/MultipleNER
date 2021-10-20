@@ -41,6 +41,7 @@ class ProductDetector(DetectorInterface):
             if len(set(tags)) == 1 and list(set(tags))[0] == 'O':
                 if any(w.lower() in self.product_corpus_tokens for w in text[0].split(" ")):
                     self.results[' '.join(text)] = "PRODUCT"
+        return self
 
     def update(self):
         d = dict()
@@ -76,7 +77,7 @@ class ProductDetector(DetectorInterface):
                     else:
                         self.cluster.append([k])
                         break
-
+        return self
 
 if __name__ == "__main__":
 

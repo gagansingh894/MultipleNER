@@ -37,13 +37,14 @@ class SerialDetector(DetectorInterface):
                 # check if text contains number
                 if check_for_digits(text[0]):
                     self.results[' '.join(text)] = "SERIAL"
+        return self
 
     def update(self):
         if len(self.cluster) == 0:
             self.cluster = list(self.results.keys())
         else:
             self.cluster = list(set(self.cluster + list(self.results.keys())))
-
+        return self
 
 if __name__ == "__main__":
     # test_data1 = '"MARKS AND SPENCERS LTD", "LONDON", "ICNAO02312", "LONDON, GREAT BRITAIN", "TOYS", "INTEL LLC", "M&S CORPORATION Limited", "LONDON, ENGLAND", "XYZ 13423 / ILD", "ABC/ICL/20891NC"'

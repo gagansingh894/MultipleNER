@@ -40,6 +40,7 @@ class ORGDetector(DetectorInterface):
             if bool(tags):
                 tag = list(tags)[0]
                 self.results[' '.join(text)] = tag
+            return self
 
     def update(self):
         d = dict()
@@ -75,6 +76,7 @@ class ORGDetector(DetectorInterface):
                         self.cluster.append([k])
                         break
 
+        return self
 
 if __name__ == "__main__":
     # test_data1 = '"MARKS AND SPENCERS LTD", "LONDON", "ICNAO02312", "LONDON, GREAT BRITAIN", "TOYS", "INTEL LLC", "NVIDIA ltd", "M&S CORPORATION Limited", "LONDON, ENGLAND"'
