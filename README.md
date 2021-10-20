@@ -24,8 +24,8 @@
      is created which implements the base interface. All these classes are encapsulated
      inside DetectorSystem class which acts as the entrypoint to the system. Please refer diagram below
      
-     ### Insert Diagram Here
-     
+###  Diagram
+![alt text](https://github.com/gagansingh894/MultipleNER/blob/main/diagram_drawio.png)     
  
  ### Basic Idea
     For performing entity detection, pretrained model from Stanford was used. The input text was
