@@ -47,4 +47,4 @@ class DetectorSystem(object):
     def _detect_product(self):
         text = copy.deepcopy(self.text)
         self.__prod_detector.ingest(text).process().detect().update()
-        self.clusters['ORG'] = self.__prod_detector.cluster
+        self.clusters['PRODUCT'] = self.__prod_detector.cluster
