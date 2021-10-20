@@ -62,6 +62,8 @@ class ORGDetector(DetectorInterface):
                         alloted.append(j)
                         d[i].append(j)
 
+        d = dict(sorted(d.items(), key=lambda x: x[1], reverse=True))
+
         for k, v in d.items():
             if bool(v):
                 self.cluster.append([k] + v)
