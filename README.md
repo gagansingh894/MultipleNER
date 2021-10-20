@@ -67,3 +67,10 @@
     In order to replicate streaming data, loops were used and since each system is implemented
     using classes the state was also preserved i.e what was the previous texts and cluster. This
     assisted in updating when new text was input.
+    
+ ## How to use
+    -> Download StanfordNER from https://nlp.stanford.edu/software/stanford-ner-4.2.0.zip
+    -> Created a directory in resource folder - stanford-ner
+    -> Extract the contents from downloaded zip into stanford-ner folder
+    -> Update paths in config.py file under utils. Please use absolute paths. 
+    -> pip install -r requirements.txt
