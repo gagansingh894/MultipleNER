@@ -55,7 +55,7 @@
     For this, predictions with O tag were filtered. The corresponding text was then
     compared with product names corpus. This corpus was manually created using flipkart dataset from
     here - https://www.kaggle.com/PromptCloudHQ/flipkart-products. In order to create clusters,
-    the text was grouped using levenshtein distance with a threshlod of 40.
+    the text was grouped using cosine distance with a threshlod of 0.7.
  
  #### SERIAL Detector
     Same logic as PRODUCT detector but along with filtering predictions based on O tag, an additional token filter
