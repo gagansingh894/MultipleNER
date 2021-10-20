@@ -12,7 +12,7 @@ class SerialDetector(DetectorInterface):
     def __init__(self, model_path: str = MODEL_PATH, class_path: str = CLASS_PATH):
         self.text = None
         self.split_text = None
-        self.processed_text = list()
+        self.processed_text = None
         self.st = StanfordNERTagger(model_path, class_path, encoding='utf-8')
         self.results = dict()
         self.cluster = list()
@@ -22,6 +22,7 @@ class SerialDetector(DetectorInterface):
         return self
 
     def process(self):
+        self.processed_text = list()
         self.split_text = self.text.split('",')
         for text in self.split_text:
             text = process_text(text, replace_whitespace=True)
