@@ -1,4 +1,6 @@
 click==8.0.3
+geographiclib==1.52
+geopy==2.2.0
 jellyfish==0.8.8
 joblib==1.1.0
 nltk==3.6.5
