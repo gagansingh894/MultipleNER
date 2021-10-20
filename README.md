@@ -74,3 +74,4 @@
     -> Extract the contents from downloaded zip into stanford-ner folder
     -> Update paths in config.py file under utils. Please use absolute paths. 
     -> pip install -r requirements.txt
+    -> Since we use nltk, u will need to download the additonal resources. I suggest to download all using mnltk.download() command.
