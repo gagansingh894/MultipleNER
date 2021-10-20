@@ -73,6 +73,7 @@ class ORGDetector(DetectorInterface):
                         break
                     else:
                         self.cluster.append([k])
+                        break
 
 
 if __name__ == "__main__":
