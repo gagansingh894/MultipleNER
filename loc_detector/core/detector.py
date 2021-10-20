@@ -76,13 +76,16 @@ class LOCDetector(DetectorInterface):
             if bool(v):
                 self.cluster.append([k] + v)
             else:
-                for cl in self.cluster:
-                    if k in cl:
-                        break
-                    else:
-                        self.cluster.append([k])
-                        break
-
+                if not bool(self.cluster):
+                    self.cluster.append([k])
+                else:
+                    for cl in self.cluster:
+                        if k in cl:
+                            break
+                        else:
+                            self.cluster.append([k])
+                            break
+        return self
 
 if __name__ == "__main__":
     pass

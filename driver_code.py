@@ -10,3 +10,4 @@ if __name__ == "__main__":
     for data in test_data:
         detector_system.ingest_text(data)
         detector_system.run()
+        print(detector_system.clusters)

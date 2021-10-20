@@ -48,10 +48,8 @@ class ProductDetector(DetectorInterface):
         alloted = []
         if len(self.cluster) == 0:
             input_list = list(set(list(self.results.keys())))
-            print(input_list)
         else:
             input_list = list(set([item for sublist in self.cluster for item in sublist] + list(self.results.keys())))
-            print(input_list)
             self.cluster = list()
 
         for i in input_list:
@@ -71,19 +69,22 @@ class ProductDetector(DetectorInterface):
             if bool(v):
                 self.cluster.append([k] + v)
             else:
-                for cl in self.cluster:
-                    if k in cl:
-                        break
-                    else:
-                        self.cluster.append([k])
-                        break
+                if not bool(self.cluster):
+                    self.cluster.append([k])
+                else:
+                    for cl in self.cluster:
+                        if k in cl:
+                            break
+                        else:
+                            self.cluster.append([k])
+                            break
         return self
 
 if __name__ == "__main__":
 
-    # test_data1 = '"MARKS AND SPENCERS LTD", "LONDON", "ICNAO02312", "LONDON, GREAT BRITAIN", "TOYS", "SOFT TOYS", "WOODEN TABLE", "INTEL LLC", "M&S CORPORATION Limited", "LONDON, ENGLAND", "XYZ 13423 / ILD", "ABC/ICL/20891NC"'
-    # test_data2 = '"PLASTIC TABLE"'
-    # test_data = [test_data1, test_data2]
+    # test_data2 = '"MARKS AND SPENCERS LTD", "LONDON", "ICNAO02312", "LONDON, GREAT BRITAIN", "SOFT TOYS", "WOODEN TABLE", "INTEL LLC", "M&S CORPORATION Limited", "LONDON, ENGLAND", "XYZ 13423 / ILD", "ABC/ICL/20891NC"'
+    # test_data3 = '"PLASTIC TABLE"'
+    # test_data = [test_data1, test_data2, test_data3]
     # sd = ProductDetector()
     # for data in test_data:
     #     sd.ingest(data)
